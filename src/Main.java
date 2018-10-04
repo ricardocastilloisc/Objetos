@@ -26,8 +26,9 @@ public class Main {
 		// ES volver a poner la medida
 		// seguir normal
 		while (opcion != 5) {
+			//dependiendo a lo que elegimos va darnos el calculo
 			resultado = calculos(opcion, cubo);
-
+			//impresion del resultado
 			System.out.println("El resultado es: " + resultado + "\n");
 
 			// volver a ver nuestras opciones
@@ -43,9 +44,14 @@ public class Main {
 	private static double calculos(int opcion, Cubo cubo2) {
 		// TODO Auto-generated method stub
 		// dependiendo la opcion sacara el returno
+		//recordatorio de la medida que pusimos al principio de la 
+		//ejecucion del programa
+		System.out.println("Recuerde que la medida que usted puso fue");
+		//le pedimos a la clase que nos indique que fue lo que pedimos
+		System.out.println(cubo2.getLado());
 		switch (opcion) {
-
 		case 1:
+			
 			// returna el perimetro del cuadrado
 			return cubo.PerimetroCuadrodo();
 
