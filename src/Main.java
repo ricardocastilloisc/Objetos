@@ -4,7 +4,10 @@ import org.omg.CORBA.portable.IndirectionException;
 
 public class Main {
 
+	//la calse cubo donde sera usa dependiendo la necesidad
 	static Cubo cubo;
+	//este sera el resultado donde podremos visualizar el final 
+	static double resultado; 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,7 +22,27 @@ public class Main {
 	private static void menus() {
 		// TODO Auto-generated method stub
 		int opcion = get_submenu();
+		//mientras la opcion que elijamos sea diferente a 5 el cual 
+		//ES volver a poner la medida 
+		//seguir normal
+		   while(opcion != 5)
+	        {
+	            resultado = calculos(opcion ,cubo);
 
+	            System.out.println("El resultado es: " +resultado+ "\n");
+	            
+	            //volver a ver nuestras opciones
+	            opcion = get_submenu();
+	        }
+		   //reiniciamos la peticion incial para poder volver a nuestras opciones
+	        inicio();
+	        //volvemos con nuestros menus
+	        menus();
+	}
+
+	private static double calculos(int opcion, Cubo cubo2) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	// sub menu donde sera los primeros menus que hagamos
