@@ -12,13 +12,10 @@ public class Cubo extends Cuadrado{
 		return Math.pow(getLado(), 3.0);
 	}
 	//calcular perimetro
-	public double PerimetroCuboCubo() {
+	public double PerimetroCubo() {
 		//retornar con el calculo
 		return getLado()*12;
 	}
-	//poner el lado
-	public void ponerLado(double parametroLado) {
-		setLado(parametroLado);
-	}
+
 
 }

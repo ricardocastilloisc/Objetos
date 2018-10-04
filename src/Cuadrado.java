@@ -18,12 +18,12 @@ public class Cuadrado {
 		this.lado = lado;
 	}
 	//calcular area
-	public double Area() 
+	public double AreaCuadrado() 
 	{
 		//retorna ya con el calculo
 		return Math.pow(this.lado, 2.0);
 	}
-	public double Perimetro() 
+	public double PerimetroCuadrodo() 
 	{
 		return this.lado*4;
 	}
