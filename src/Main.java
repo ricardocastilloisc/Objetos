@@ -4,10 +4,10 @@ import org.omg.CORBA.portable.IndirectionException;
 
 public class Main {
 
-	//la calse cubo donde sera usa dependiendo la necesidad
+	// la calse cubo donde sera usa dependiendo la necesidad
 	static Cubo cubo;
-	//este sera el resultado donde podremos visualizar el final 
-	static double resultado; 
+	// este sera el resultado donde podremos visualizar el final
+	static double resultado;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,34 +22,66 @@ public class Main {
 	private static void menus() {
 		// TODO Auto-generated method stub
 		int opcion = get_submenu();
-		//mientras la opcion que elijamos sea diferente a 5 el cual 
-		//ES volver a poner la medida 
-		//seguir normal
-		   while(opcion != 5)
-	        {
-	            resultado = calculos(opcion ,cubo);
+		// mientras la opcion que elijamos sea diferente a 5 el cual
+		// ES volver a poner la medida
+		// seguir normal
+		while (opcion != 5) {
+			resultado = calculos(opcion, cubo);
 
-	            System.out.println("El resultado es: " +resultado+ "\n");
-	            
-	            //volver a ver nuestras opciones
-	            opcion = get_submenu();
-	        }
-		   //reiniciamos la peticion incial para poder volver a nuestras opciones
-	        inicio();
-	        //volvemos con nuestros menus
-	        menus();
+			System.out.println("El resultado es: " + resultado + "\n");
+
+			// volver a ver nuestras opciones
+			opcion = get_submenu();
+		}
+		// reiniciamos la peticion incial para poder volver a nuestras opciones
+		inicio();
+		// volvemos con nuestros menus
+		menus();
 	}
 
+	// los calculos ya establecidos para poder retornarlos
 	private static double calculos(int opcion, Cubo cubo2) {
 		// TODO Auto-generated method stub
-		return 0;
+		// dependiendo la opcion sacara el returno
+		switch (opcion) {
+
+		case 1:
+			// returna el perimetro del cuadrado
+			return cubo.PerimetroCuadrodo();
+
+		case 2:
+			// retorname el area del cuadrado
+			return cubo.AreaCuadrado();
+
+		case 3:
+			// returname el volumen del cubo
+			return cubo.VolumenCubo();
+
+		case 4:
+			// retorname el perimetro del cubo
+			return cubo.PerimetroCubo();
+
+		case 5:
+			// vuleve a inicar
+			// esto esta de mas
+			// solo es por si las dudas
+			inicio();
+			break;
+		case 6:
+			// salir del programa
+			System.out.println("Saliendo del programa");
+			System.exit(0);
+			break;
+
+		}
+		return opcion;
 	}
 
 	// sub menu donde sera los primeros menus que hagamos
 	private static int get_submenu() {
 		// TODO Auto-generated method stub
 		// escaneo del teclado
-		Scanner scanner = new Scanner(System.in);
+		Scanner escaneoteclado = new Scanner(System.in);
 		// opciones a elegir
 		System.out.println("Ingrese el calculo a realizar:");
 		System.out.println("1.-Perimetro cuadrado");
@@ -58,9 +90,9 @@ public class Main {
 		System.out.println("4.-Calcular Perímetro cubo");
 		System.out.println("5.-Volver a capturar el valor de la medida del lado");
 		System.out.println("6.-Salir del programa");
-		
-		//tomar la opcion
-		int opcionElegida = Integer.parseInt(scanner.nextLine());
+
+		// tomar la opcion
+		int opcionElegida = Integer.parseInt(escaneoteclado.nextLine());
 		return opcionElegida;
 	}
 
