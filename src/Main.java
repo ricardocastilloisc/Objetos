@@ -13,9 +13,7 @@ public class Main {
 		// lo convierte a la variable principal
 		Cadena = entrada.nextLine();
 		
-		
-
-		Cubo cubo = new Cubo(5.0);
+		Cubo cubo = new Cubo(Double.parseDouble(Cadena));
 
 	}
 
